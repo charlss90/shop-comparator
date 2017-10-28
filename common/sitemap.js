@@ -1,16 +1,31 @@
+const {RequestService, ParserService} = require('./services');
+
 class Sitemap {
 
+  /**
+   * Get a sitemap.xml given a url and parser to object
+   * @param {RequestService} requestService 
+   * @param {ParserService} parserService 
+   */
   constructor(requestService, parserService) {
     this.requestService = requestService;
     this.parserService = parserService;
   }
 
+  /**
+   * set url sitemap
+   * @param {String} url 
+   */
   fromUrl(url) {
     this.url = url;
     return this;
   }
 
 
+  /**
+   * download and parser to object the sitemap xml we can set filters to get specifics fields
+   * @param {Object} filters 
+   */
   asObject(filters) {
     if (!this.url)
       throw new Error('Missing Url');
