@@ -2,5 +2,7 @@
 
 module.exports = {
   ParserService: require('./parser'),
-  RequestService: require('./request')
+  RequestService: require('./request'),
+  CheerioService: require('./cheerio'),
+  LogService: require('./log')
 };
